@@ -119,7 +119,17 @@ LOCAL_SRC_FILES:=\
 	missing/strlcat.c\
 	missing/strlcpy.c
 
-LOCAL_CFLAGS := -O2 -g
+LOCAL_CFLAGS := -g
+# tcpdump can't be built without optimizations, so we enforce -O2 if no
+# other optimization flag is set - but we don't override what the global
+# flags are saying if something else is given (-Os or -O3 are useful)
+ifeq ($(findstring -O, $(TARGET_GLOBAL_CFLAGS)),)
+LOCAL_CFLAGS += -O2
+endif
+ifneq ($(findstring -O0, $(TARGET_GLOBAL_CFLAGS)),)
+LOCAL_CFLAGS += -O2
+endif
+LOCAL_CFLAGS += -fno-strict-aliasing
 LOCAL_CFLAGS += -DHAVE_CONFIG_H -D_U_="__attribute__((unused))"
 
 LOCAL_C_INCLUDES += \
