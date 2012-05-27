@@ -131,7 +131,9 @@
 /* #undef HAVE_NETDNET_DNETDB_H_DNET_HTOA */
 
 /* define if should drop privileges by default */
-#define WITH_USER "shell"
+/* Must not drop privileges - else socket() for resolving won't work anymore
+ * because of EPERM. --yath */
+/* #undef WITH_USER */
 
 /* define if should chroot when dropping privileges */
 /* #undef WITH_CHROOT */
@@ -153,10 +155,10 @@
 #define HAVE_FCNTL_H 1
 
 /* Define to 1 if you have the `getaddrinfo' function. */
-/* #undef HAVE_GETADDRINFO */
+#define HAVE_GETADDRINFO
 
 /* Define to 1 if you have the `getnameinfo' function. */
-/* #undef HAVE_GETNAMEINFO */
+#define HAVE_GETNAMEINFO 1
 
 /* Define to 1 if you have the <inttypes.h> header file. */
 #define HAVE_INTTYPES_H 1
