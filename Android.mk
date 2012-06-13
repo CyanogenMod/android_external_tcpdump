@@ -28,7 +28,7 @@ LOCAL_SRC_FILES := \
 	print-timed.c print-token.c print-udld.c print-udp.c print-usb.c \
 	print-vjc.c print-vqp.c print-vrrp.c print-vtp.c print-forces.c \
 	print-wb.c print-zephyr.c signature.c setsignal.c tcpdump.c util.c \
-	missing/strlcpy.c missing/strlcat.c \
+	missing/strlcpy.c missing/strlcat.c print-tipc.c \
 	print-isakmp.c print-babel.c print-dhcp6.c print-frag6.c print-icmp6.c \
 	print-ip6.c print-ip6opts.c print-mobility.c print-netbios.c print-ospf6.c \
 	print-ripng.c print-rt6.c print-smb.c send-ack.awk smbutil.c version.c
