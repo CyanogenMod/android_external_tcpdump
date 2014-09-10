@@ -30,6 +30,7 @@ tcpdump_CSRC =	addrtoname.c af.c checksum.c cpack.c gmpls.c oui.c gmt2local.c ip
 	print-wb.c print-zephyr.c print-zeromq.c print-vxlan.c print-otv.c signature.c setsignal.c tcpdump.c util.c
 
 tcpdump_LIBNETDISSECT_SRC=print-isakmp.c
+
 tcpdump_LOCALSRC = print-ip6.c print-ip6opts.c print-mobility.c print-ripng.c print-icmp6.c print-frag6.c print-rt6.c print-ospf6.c print-dhcp6.c print-babel.c print-smb.c smbutil.c 
 tcpdump_GENSRC = version.c
 
@@ -50,7 +51,7 @@ LOCAL_STATIC_LIBRARIES += libpcap
 
 LOCAL_MODULE_PATH := $(TARGET_OUT_OPTIONAL_EXECUTABLES)
 
-LOCAL_MODULE_TAGS := eng
+LOCAL_MODULE_TAGS := optional
 
 LOCAL_MODULE := tcpdump
 
